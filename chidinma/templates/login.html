@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+{% endblock %}
+
+{% block content %}
+
+<form action = "/auth/" method = "post">{% csrf_token %}
+	Username
+	<input type = "text" name = "username" value = "">
+	<br>
+	Password
+	<input type = "password" name = "password" value = "">
+	<br>
+	<input type = "submit" value = "login" />
+</form>
+
+{% endblock %}

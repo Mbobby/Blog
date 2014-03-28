@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+<html>
+
+	<head> 
+		<title> Chidi's Blog </title>
+	</head>
+	{% block content%}
+	<body>
+		{% for i in articles%}
+			<div class="post">
+						<h2 class="title"><a href="/get/{{i.id}}">{{i.title}}</a></h2>
+						<p class="meta"><span class="date">{{i.pub_date}}</span><span class="posted">Posted by Chidinma </span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							{{i.body}}
+						</div>
+					</div>
+		{% endfor %}
+	</body>
+	{% endblock %}
+
+</html>

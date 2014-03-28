@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Chidi's Blog!!!</title>
+<link href= "{% static "assets/css/style.css"%}" rel="stylesheet" type="text/css" media="screen" />
+<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="/">Chidi's Blog!!!</a></h1>
+	</div>
+	<div id="menu">
+		{% block sidebar %}
+		<ul>
+			<li class="current_page_item"><a href="/">Homepage</a></li>
+			<li><a href="/all/">Articles</a></li>
+			<li><a href="/register/">Sign-Up</a></li>
+			<li><a href="/about/">About</a></li>
+			<li><a href="/contact/">Contact</a></li>
+		</ul>
+		{% endblock %}
+	</div>
+</div>
+<div id="splash-wrapper">
+	<div id="splash">
+		<h2>Welcome to Chidi's Blog!</h2>
+		<p>My name is Chidinma Mong, a hobbyist blogger, nature enthusiast, socially inclined maestro and text-book genius.. I am without doubt the next big thing!</p>
+	</div>
+</div>
+<!-- end #header -->
+<div id="wrapper">
+	<div id="wrapper2">
+		<div id="wrapper-bgtop">
+			<div id="page">
+				<div id="content">
+					{% block content %}
+					<div class="post">
+						<h2 class="title"><a href="#">Once Again, Welcome!!</a></h2>
+						<p class="meta"><span class="date">December 12, 2011</span><span class="posted">Posted by <a href="#">Someone</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							<p>This is <strong>Rock Castle</strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.  This free template is released under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license, so you’re pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :)</p>
+							<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut . In id eros. Suspendisse  turpis, cursus egestas at sem.</p>
+							<p class="links"><a href="#" class="more">Read More</a><a href="#" title="b0x" class="comments">Comments</a></p>
+						</div>
+					</div>
+					{% endblock %}
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<div id="sidebar-bgtop">
+						<div id="sidebar-bgbtm">
+							<ul>
+								<li>
+									<div id="search" >
+										<form method="get" action="#">
+											<div>
+												<input type="text" name="s" id="search-text" value="" />
+												<input type="submit" id="search-submit" value="GO" />
+											</div>
+										</form>
+									</div>
+									<div style="clear: both;">&nbsp;</div>
+								</li>
+								
+								<li>
+									<h2>Links</h2>
+									<ul>
+										<li><a href="/all/">Articles</a></li>
+										<li><a href="/register/">Register</a></li>
+										<li><a href="/login/">Login</a></li>
+										<li><a href="/logout/">Logout</a></li>
+										<li><a href="/admin/">Admin</a></li>
+										<li><a href="/create/">Create Article</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+			<!-- end #page -->
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="content">
+		<p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+	</div>
+</div>
+<!-- end #footer -->
+</body>
+</html>

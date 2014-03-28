@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<html>
+
+	{% block content %}
+		<body>
+				{% if article.thumbnail %}
+				<p> <img src = "/static/assets/{{article.thumbnail}}" width = "200" /></p>				
+				{% endif %}
+
+				<h3> {{article.title}}  </h3>
+				<li> {{article.body}} </li>
+				<br>
+				<li> published: {{article.pub_date}} </li>
+				<br>
+				<li> {{article.likes}} People like this.<a href="/like/{{article.id}}/">Like</a> </li>
+				{% if comment %}
+					<br>
+					<h3>Comments On this Post....</h3>
+					<br>
+					{% for comments in comment %}
+					<div class="post">
+						<p class="meta"><span class="date">{{comments.pub_date}}</span><span class="posted">{{comments.name}}</span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							{{comments.body}}
+						</div>
+					</div>
+					{% endfor %}
+				{% endif %}
+				<br>
+				<br>
+				<h3>Make a Comment!</h3>
+				<form action = '/comment/{{article.id}}/' method = "post">{% csrf_token %}
+					{{form.as_ul}}
+					<input type = "submit" value = "Comment">
+				</form>
+
+		</body>
+	{% endblock %}
+
+</html>
